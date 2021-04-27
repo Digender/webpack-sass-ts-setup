@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.ts',
     devtool: 'inline-source-map',
     output: {
         filename: 'main.[contenthash].js',
@@ -32,9 +32,9 @@ module.exports = {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: 'asset/resource',
         }, {
-          test: /\.html$/i,
-          loader: 'html-loader',
-        },
+          test: /\.html$/,
+          use: 'raw-loader'
+        }
     ],
   },
   resolve: {
